@@ -1,0 +1,287 @@
+/*Adam To*/
+
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+/*^ Font import. Full axis import: @import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
+
+/*reset*/
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+/**/
+
+/*variables*/
+    :root {
+        /*fonts*/
+            --font1: "Molle", serif;
+            --font2: "Montserrat", sans-serif;
+            /*
+            .montserrat-<uniquifier> {
+                font-family: "Montserrat", serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }
+            .molle-regular-italic {
+                font-family: "Molle", serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+            */
+        /**/
+        
+        /*colors*/
+            --yellow: #F6D64A;
+            --teal: #55BCD5;
+            --purple: #9B26B0;
+            --blue: #499BD2;
+            --dark-gray: #222222;
+            --light-gray: #EAEAEA;
+            --white: #FFFFFF;
+            --black: #000000;
+        /**/
+    }
+/**/
+/*skip link*/
+    #skip {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+    }
+    #skip:focus {
+        position:static;
+        width:auto;
+        height:auto;
+    }
+/**/
+/*font styles*/
+    h1, h2, h3, h4 {
+        font-family: var(--font1);
+    }
+    p, q, small, nav, button, form, label, nav li  {
+        font-family: var(--font2);
+    }
+    h1 {
+        font-size: 50pt;
+    }
+    h2 {
+        font-size: 45pt;
+    }
+    h3 {
+        font-size: 40pt;
+    }
+    h4 {
+        font-size: 30pt;
+    }
+    p {
+        font-size: 20pt;
+        line-height: 30pt;
+    }
+    q {
+        font-size: 20pt;
+        font-style: italic;
+    }
+    nav, a, form {
+        font-size: 15pt;
+        font-weight: 600;
+    }
+/**/
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+/*menu*/
+                    #menu-toggle {
+                        display: flex;
+                        /*display: block;
+                        position: relative;
+                        top: 50px;
+                        left: 50px;  
+                        z-index: 1;*/
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+                    
+                    #menu-toggle a {
+                        text-decoration: none;
+                        color: #232323;
+                        /* -webkit-transition: color 0.3s ease;
+                        -o-transition: color 0.3s ease;
+                        transition: color 0.3s ease; */
+                    }
+                    
+                    /* #menu-toggle a:hover {
+                        color: #4f7794;
+                    } */
+                    
+                    #menu-toggle input {
+                        display: none;
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;
+                        top: -7px;
+                        left: -5px;  
+                        padding: 0;
+                        cursor: pointer;
+                        opacity: 0; /* hide this */
+                        z-index: 2; /* and place it over the hamburger */  
+                        -webkit-touch-callout: none;
+                    }
+                    
+                    #menu-toggle label {
+                        position: relative;
+                        background-color: var(--yellow);
+                        text-transform: uppercase;
+                        flex-grow: 1;
+                        padding: 1rem 4rem;
+
+                        /* display: block; */
+                        /* width: 30px;
+                        height: 30px;  */
+                    }
+                    
+                    
+                    /* 
+                    * Change the color of the hamburger when toggled
+                    */
+                    #menu-toggle input:checked + label {
+                        background-color: var(--black);
+                        color: var(--white);
+                        position: relative;
+                        top: -100px;
+                        width: 100vw;
+                        padding: 1rem 0;
+                        z-index: 2;
+                        text-align: center;
+                        text-transform: uppercase;
+
+                    }
+                    
+                    /*
+                    * Use absolute positioning to place the menu off-screen
+                    */
+                    nav div ul {
+                        position: absolute;
+                        width: 100vw;
+                        background: var(--teal);
+                        list-style-type: none;
+                        /* Hide the menu off-screen to the left */
+                        top: 50px;
+                        left: -200vw;
+                        
+                        -webkit-transition: left 0.3s ease;
+                        -o-transition: left 0.3s ease;
+                        transition: left 0.3s ease;
+                        
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                    
+                    nav div ul li {
+                        padding: 3rem 0;
+                        border-bottom: 1px solid var(--black);
+                    }
+                    
+                    /*
+                    * Slide the menu in from left when the input is checked
+                    */
+                    #menu-toggle input:checked ~ ul {
+                        /* position: static; */
+                        left: 0;
+                    }
+/**/
+h1 {
+    order: 98;
+    padding: 2rem 3rem 0rem;
+}
+header p {
+    order: 99;
+    padding-left: 3rem;
+}
+header {
+    background: linear-gradient(var(--teal), var(--white));
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+}
+/* main {
+    display: grid;
+    grid-template-columns: 1fr;
+} */
+h2 {
+    padding-left: 3rem;
+}
+p {
+    padding-left: 3rem;
+    max-width: 80vw;
+}
+#img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1920px){
+    nav, a, form {
+        font-size: 20px;
+    }
+}
