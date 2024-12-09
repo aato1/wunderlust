@@ -102,10 +102,10 @@
     }
 /**/
 /*font styles*/
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
         font-family: var(--font1);
     }
-    p, q, small, nav, button, form, label, nav li  {
+    h4, p, q, small, nav, button, form, label, nav li  {
         font-family: var(--font2);
     }
     h1 {
@@ -118,7 +118,12 @@
         font-size: 40pt;
     }
     h4 {
-        font-size: 30pt;
+        font-size: 26pt;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    header p {
+        font-size: 20pt;
     }
     p {
         font-size: 20pt;
@@ -127,12 +132,17 @@
     q {
         font-size: 20pt;
         font-style: italic;
+        line-height: 24pt;
     }
     nav, a, form {
         font-size: 15pt;
         font-weight: 600;
     }
 /**/
+/* body {
+    min-width: 428px;
+    overflow-x: hidden;
+} */
 
 header {
     display: flex;
@@ -254,7 +264,7 @@ header {
 /**/
 h1 {
     order: 98;
-    padding: 2rem 3rem 0rem;
+    padding: 2rem 0rem 0rem 3rem;
 }
 header p {
     order: 99;
@@ -263,7 +273,10 @@ header p {
 header {
     background: linear-gradient(var(--teal), var(--white));
     padding-top: 1rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+}
+#intro {
+    padding: 2rem 0;
 }
 /* main {
     display: grid;
@@ -272,14 +285,125 @@ header {
 h2 {
     padding-left: 3rem;
 }
-p {
+#intro p {
     padding-left: 3rem;
     max-width: 80vw;
+    font-size: 16pt;
 }
 #img-grid {
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+    /* min-width: 428px; */
+    /* width: 100%; */
+    row-gap: 1rem;
 }
+
+/* #img-grid > img {
+    width: 100%;
+    object-fit: cover;
+}
+#img-grid picture img {
+    object-fit: contain;
+} */
+
+
+
+#plan {
+    background-color: var(--yellow);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+}
+#plan div{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+#plan section {
+    background-color: var(--teal);
+    border: 3px solid var(--white);
+    border-radius: 1rem;
+    width: 75%;
+    padding: 3rem;
+}
+h3 {
+    padding: 2rem 0rem 2rem 3rem;
+}
+h4, a {
+    text-align: center;
+}
+#plan div section {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 2rem;
+}
+#testimonials {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#testimonials div {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+}
+#testimonials div section {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}
+#testimonials img {
+    margin: 1rem auto;
+}
+#testimonials q:before{
+    content: '“';
+}
+#testimonials q:after {
+    content: "”";
+}
+#about{
+    background-color: var(--blue);
+}
+#about div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%; 
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+#about section {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+}
+#about section img {
+    width: 60%;
+}
+#about h4 {
+    text-align: center;
+}
+footer {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 2rem;
+}
+footer p, footer a{
+    font-family: var(--font2);
+    font-size: 16pt;
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--black);
+    text-align: center;
+}
+
 @media screen and (min-width: 1920px){
     nav, a, form {
         font-size: 20px;
